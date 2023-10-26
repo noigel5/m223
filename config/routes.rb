@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'package/create'
   get 'package/edit'
   get 'package/destroy'
-  get 'pages/secret'
+  get 'pages/profile'
   get 'user_sessions/new'
   get 'user_sessions/create'
   get 'users/index'
