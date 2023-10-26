@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_20_112257) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_26_043420) do
+  create_table "packages", force: :cascade do |t|
+    t.string "absender"
+    t.string "empfänger"
+    t.string "inhalt"
+    t.string "gewicht"
+    t.string "zielort"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
