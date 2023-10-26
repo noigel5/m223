@@ -3386,3 +3386,114 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 3427)
 
 
+Started DELETE "/user_sessions/1" for 127.0.0.1 at 2023-10-26 12:37:51 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserSessionsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms | Allocations: 2666)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-26 12:37:52 +0200
+Processing by PagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 776)
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 35582)
+Completed 200 OK in 54ms (Views: 51.2ms | ActiveRecord: 0.0ms | Allocations: 39070)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2023-10-26 12:37:54 +0200
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (Duration: 28.9ms | Allocations: 14994)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 17482)
+Completed 200 OK in 44ms (Views: 31.7ms | ActiveRecord: 0.4ms | Allocations: 24206)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-10-26 12:37:56 +0200
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 3228)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5423)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 5870)
+
+
+Started GET "/pages/profile" for 127.0.0.1 at 2023-10-26 12:37:58 +0200
+Processing by PagesController#profile as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 3)
+Completed 401 Unauthorized in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 561)
+
+
+Started GET "/pages/profile" for 127.0.0.1 at 2023-10-26 12:37:58 +0200
+Processing by PagesController#profile as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 465)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-26 12:37:59 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 296)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2478)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 2743)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2023-10-26 12:38:00 +0200
+Processing by UserSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 951)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3009)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 3482)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2023-10-26 12:38:04 +0200
+Processing by UserSessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/user_sessions_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 196ms (ActiveRecord: 0.1ms | Allocations: 2537)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-26 12:38:04 +0200
+Processing by PagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1748)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3927)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 4226)
+
+
+Started GET "/pages/profile" for 127.0.0.1 at 2023-10-26 12:38:06 +0200
+Processing by PagesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/profile.html.erb within layouts/application
+  Rendered pages/profile.html.erb within layouts/application (Duration: 0.5ms | Allocations: 227)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2282)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 3320)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2023-10-26 12:38:09 +0200
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 593)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2831)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 3101)
+
+
