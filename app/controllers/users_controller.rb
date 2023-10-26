@@ -19,6 +19,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+
+    if @user.update(user_params)
+      flash[:notice] = "Profile updated successfully"
+      redirect_to pages_profile_path
+    else
+      flash[:alert] = "Profile not updated"
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def user_params
