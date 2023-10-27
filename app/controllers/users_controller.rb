@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = current_user
 
     if @user.update(user_params)
-      flash[:notice] = "Profile updated successfully"
+      flash[:alert] = "Profile updated successfully"
       redirect_to pages_profile_path
     else
       flash[:alert] = "Profile not updated"

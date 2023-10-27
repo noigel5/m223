@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   root 'pages#index'
   resources :users, only: [:index, :new, :create, :edit, :update]
   resources :user_sessions, only: [:new, :create, :destroy]
+  resources :admin, only: [:edit, :update, :destroy]
 
 end

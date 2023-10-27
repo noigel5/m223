@@ -8,6 +8,8 @@
       <th>email</th>
       <th>address</th>
       <th>telephone number</th>
+      <th>actions</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +20,12 @@
         <td><%= user.email %></td>
         <td><%= user.address %></td>
         <td><%= user.telnr %></td>
+        <td>
+          <%= link_to "Edit", edit_admin_path(user) %>
+        </td>
+        <td>
+          <%= link_to "Delete", admin_path(user), data: { turbo_confirm: "Really delete this user?", turbo_method: :delete} %>
+        </td>
       </tr>
     <% end %>
   </tbody>
