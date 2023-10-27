@@ -1,0 +1,35 @@
+<h1>New Package</h1>
+<%= form_with model: @package do |f| %>
+  <% if @package.errors.any? %>
+    <div>
+      <ul>
+        <% @package.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :sender %><br>
+    <%= f.text_field :sender %>
+  </div>
+  <div>
+    <%= f.label :recipient %><br>
+    <%= f.text_field :recipient %>
+  </div>
+  <div>
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+  <div>
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div>
+    <%= f.label :destination %><br>
+    <%= f.text_field :destination %>
+  </div>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

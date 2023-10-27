@@ -12,11 +12,11 @@
 
 ActiveRecord::Schema[7.1].define(version: 2023_10_26_120743) do
   create_table "packages", force: :cascade do |t|
-    t.string "absender"
-    t.string "empfänger"
-    t.string "inhalt"
-    t.string "gewicht"
-    t.string "zielort"
+    t.string "sender"
+    t.string "recipient"
+    t.string "content"
+    t.string "weight"
+    t.string "destination"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

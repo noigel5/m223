@@ -8536,3 +8536,2906 @@ Completed 200 OK in 26ms (Views: 18.2ms | ActiveRecord: 0.9ms | Allocations: 235
 
 
   [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-27 11:32:01.784412', '2023-10-27 11:32:01.784415') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20231020112257)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231020112257') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePackages (20231026043420)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231026043420') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRoleToUsers (20231026120743)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "role" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231026120743') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4adfeaf6dd7899d0c79fb1b002f43120b201be3c', '2023-10-27 11:32:06.863076', '2023-10-27 11:32:06.863079') RETURNING "key"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages"[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231026120743)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231026043420),
+(20231020112257);[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-27 11:32:06.893982', '2023-10-27 11:32:06.893985') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2023-10-27 11:32:06.895755' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4adfeaf6dd7899d0c79fb1b002f43120b201be3c', '2023-10-27 11:32:06.897033', '2023-10-27 11:32:06.897035') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231026120743)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231026043420),
+(20231020112257);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-27 11:43:23.979381', '2023-10-27 11:43:23.979385') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4adfeaf6dd7899d0c79fb1b002f43120b201be3c', '2023-10-27 11:43:23.982884', '2023-10-27 11:43:23.982886') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231026120743)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231026043420),
+(20231020112257);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-27 11:43:24.003449', '2023-10-27 11:43:24.003451') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2023-10-27 11:43:24.004500' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4adfeaf6dd7899d0c79fb1b002f43120b201be3c', '2023-10-27 11:43:24.005574', '2023-10-27 11:43:24.005575') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/index" for 127.0.0.1 at 2023-10-27 13:43:29 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_admin rendered or redirected
+Completed 302 Found in 21ms (ActiveRecord: 0.2ms | Allocations: 13205)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:43:29 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1383)
+  Rendered layout layouts/application.html.erb (Duration: 44.7ms | Allocations: 36475)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.1ms | Allocations: 39977)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:43:33 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 825)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2880)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3156)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:43:34 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 812)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2867)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3119)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:43:35 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 812)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2867)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3119)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:43:35 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2860)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 3106)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:43:35 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 808)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2863)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 3109)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:44:41 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 4467)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 18638)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 1.0ms | Allocations: 19706)
+
+
+Started GET "/package/index" for 127.0.0.1 at 2023-10-27 13:44:42 +0200
+Processing by PackageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering package/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.2ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/package/index.html.erb:16
+  Rendered package/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3531)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 4774)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:44:51 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 4518)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 18796)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 1.0ms | Allocations: 19864)
+
+
+Started GET "/package/index" for 127.0.0.1 at 2023-10-27 13:44:53 +0200
+Processing by PackageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering package/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/package/index.html.erb:16
+  Rendered package/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1018)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3486)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 4689)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:45:53 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4432)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 18604)
+Completed 200 OK in 43ms (Views: 41.1ms | ActiveRecord: 1.1ms | Allocations: 19667)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2023-10-27 13:45:55 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_admin rendered or redirected
+Completed 302 Found in 20ms (ActiveRecord: 0.1ms | Allocations: 1164)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:45:55 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 827)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3019)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3312)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:45:57 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 779)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2839)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3085)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2023-10-27 13:45:58 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 875)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:45:58 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 786)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2842)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 3090)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:45:59 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 797)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2852)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3098)
+
+
+Started GET "/pages/profile" for 127.0.0.1 at 2023-10-27 13:46:07 +0200
+Processing by PagesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 3)
+Completed 401 Unauthorized in 3ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1016)
+
+
+Started GET "/pages/profile" for 127.0.0.1 at 2023-10-27 13:46:07 +0200
+Processing by PagesController#profile as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 1005)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:46:08 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 813)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2995)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3254)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:46:25 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4466)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 18736)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.0ms | Allocations: 19803)
+
+
+Started GET "/package/index" for 127.0.0.1 at 2023-10-27 13:46:27 +0200
+Processing by PackageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering package/index.html.erb within layouts/application
+  Rendered package/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 5421)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5517)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 6704)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_package_path' for #<ActionView::Base:0x0000000001e8c0>
+
+'.freeze; @output_buffer.append=( link_to 'New Package', new_package_path ); @output_buffer.safe_append='
+                                                         ^^^^^^^^^^^^^^^^
+Did you mean?  new_user_path):
+    1: <h1>Package</h1>
+    2: 
+    3: <%= link_to 'New Package', new_package_path %>
+    4: <br>
+    5: <table>
+    6:   <thead>
+  
+app/views/package/index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:49:33 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 4450)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 18728)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.0ms | Allocations: 19792)
+
+
+Started GET "/package/index" for 127.0.0.1 at 2023-10-27 13:49:35 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/package/index"):
+  
+Started GET "/package/index" for 127.0.0.1 at 2023-10-27 13:49:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/package/index"):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:49:53 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 5650)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5739)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.5ms | Allocations: 6732)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"packages"}, missing required keys: [:id]
+Did you mean?  package_url):
+     6:   <%= link_to 'Login', new_user_session_path %><br>
+     7: <% end %>
+     8: <br>
+     9: <%= link_to 'Packages', package_path %>
+    10: <br>
+    11: <br>
+    12: <%= link_to 'Profile', '/pages/profile' %>
+  
+app/views/pages/index.html.erb:9
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:49:57 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2071)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2155)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 2399)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"packages"}, missing required keys: [:id]
+Did you mean?  package_url):
+     6:   <%= link_to 'Login', new_user_session_path %><br>
+     7: <% end %>
+     8: <br>
+     9: <%= link_to 'Packages', package_path %>
+    10: <br>
+    11: <br>
+    12: <%= link_to 'Profile', '/pages/profile' %>
+  
+app/views/pages/index.html.erb:9
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:50:30 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 28.8ms | Allocations: 17924)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 18055)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.2ms | Allocations: 22281)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `index_package_path' for #<ActionView::Base:0x0000000000be50>
+
+'.freeze; @output_buffer.append=( link_to 'Packages', index_package_path ); @output_buffer.safe_append='
+                                                      ^^^^^^^^^^^^^^^^^^
+Did you mean?  edit_package_path):
+     6:   <%= link_to 'Login', new_user_session_path %><br>
+     7: <% end %>
+     8: <br>
+     9: <%= link_to 'Packages', index_package_path %>
+    10: <br>
+    11: <br>
+    12: <%= link_to 'Profile', '/pages/profile' %>
+  
+app/views/pages/index.html.erb:9
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:51:07 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 4478)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 38898)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 1.2ms | Allocations: 39993)
+
+
+Started GET "/package" for 127.0.0.1 at 2023-10-27 13:51:08 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/package"):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:51:11 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 912)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3106)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3391)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:51:14 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 4533)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 18810)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.0ms | Allocations: 19878)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 13:51:16 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:51:42 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 812)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2882)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 3148)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:51:56 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 4455)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 18743)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 1.0ms | Allocations: 19809)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 13:51:57 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-27 11:52:36.718722', '2023-10-27 11:52:36.718725') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20231020112257)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231020112257') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePackages (20231026043420)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231026043420') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRoleToUsers (20231026120743)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "role" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231026120743') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4adfeaf6dd7899d0c79fb1b002f43120b201be3c', '2023-10-27 11:52:46.005926', '2023-10-27 11:52:46.005929') RETURNING "key"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages"[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231026120743)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231026043420),
+(20231020112257);[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-27 11:52:46.038291', '2023-10-27 11:52:46.038294') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2023-10-27 11:52:46.040442' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4adfeaf6dd7899d0c79fb1b002f43120b201be3c', '2023-10-27 11:52:46.042167', '2023-10-27 11:52:46.042170') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:52:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 12936)
+  Rendered layout layouts/application.html.erb (Duration: 56.9ms | Allocations: 47682)
+Completed 200 OK in 65ms (Views: 59.5ms | ActiveRecord: 0.2ms | Allocations: 51957)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 13:52:54 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:53:53 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 4494)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 18773)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 1.2ms | Allocations: 19842)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 13:53:55 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:54:36 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4461)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 18738)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.9ms | Allocations: 19801)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:54:37 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 904)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 2960)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.1ms | Allocations: 3248)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 13:54:38 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:54:40 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2894)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 3140)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:54:49 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4528)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 18797)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.9ms | Allocations: 19864)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 13:57:33 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 13:58:50 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:58:55 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 4478)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 18766)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 1.4ms | Allocations: 19787)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:59:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 12957)
+  Rendered layout layouts/application.html.erb (Duration: 58.3ms | Allocations: 47428)
+Completed 200 OK in 64ms (Views: 60.4ms | ActiveRecord: 0.2ms | Allocations: 51703)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 13:59:06 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:59:09 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1000)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3180)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 3466)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 13:59:27 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4544)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 18822)
+Completed 200 OK in 31ms (Views: 20.4ms | ActiveRecord: 1.1ms | Allocations: 19897)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 13:59:28 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:00:41 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 4472)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 18748)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.9ms | Allocations: 19813)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:00:41 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 867)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 2927)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.1ms | Allocations: 3208)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:00:46 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:01:45 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4474)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 18751)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.9ms | Allocations: 19820)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:01:46 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:02:16 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:02:18 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 4467)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 18747)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 1.3ms | Allocations: 19769)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:02:20 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:02:22 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 829)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2899)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 3165)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:03:32 +0200
+  
+NameError (undefined local variable or method `index' for #<ActionDispatch::Routing::Mapper:0x00007f9414834b40 @set=#<ActionDispatch::Routing::RouteSet:0x00007f9414054948>, @draw_paths=[#<Pathname:/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/actionview-7.1.1/config/routes>, #<Pathname:/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/activestorage-7.1.1/config/routes>, #<Pathname:/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/actioncable-7.1.1/config/routes>, #<Pathname:/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/actionmailbox-7.1.1/config/routes>, #<Pathname:/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/actiontext-7.1.1/config/routes>, #<Pathname:/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/importmap-rails-1.2.1/config/routes>, #<Pathname:/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/config/routes>, #<Pathname:/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/stimulus-rails-1.3.0/config/routes>, #<Pathname:/home/unixadmin/projects/m223/config/routes>, #<Pathname:/home/unixadmin/projects/m223/config/routes>], @scope=#<ActionDispatch::Routing::Mapper::Scope:0x00007f9414834af0 @hash={:path_names=>{:new=>"new", :edit=>"edit"}}, @parent=#<ActionDispatch::Routing::Mapper::Scope:0x00007f941470dff0 @hash=nil, @parent=nil, @scope_level=nil>, @scope_level=nil>, @concerns={}>
+
+  resources :packages, only: [index, :create, :destroy, :edit]
+                              ^^^^^):
+  
+config/routes.rb:23:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:03:48 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 8783)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 8872)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.1ms | Allocations: 9871)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `packages_path' for #<ActionView::Base:0x000000000211b0>
+
+'.freeze; @output_buffer.append=( link_to 'Packages', packages_path ); @output_buffer.safe_append='
+                                                      ^^^^^^^^^^^^^):
+     6:   <%= link_to 'Login', new_user_session_path %><br>
+     7: <% end %>
+     8: <br>
+     9: <%= link_to 'Packages', packages_path %>
+    10: <br>
+    11: <br>
+    12: <%= link_to 'Profile', '/pages/profile' %>
+  
+app/views/pages/index.html.erb:9
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:03:59 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 4519)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 18819)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.9ms | Allocations: 19883)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:04:00 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:06:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 12948)
+  Rendered layout layouts/application.html.erb (Duration: 71.4ms | Allocations: 47880)
+Completed 200 OK in 79ms (Views: 74.1ms | ActiveRecord: 0.3ms | Allocations: 52155)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:06:58 +0200
+  
+ActionController::RoutingError (uninitialized constant PackagesController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  PackageController
+               PagesController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:13:00 +0200
+Processing by PackagesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 2613)
+
+
+  
+NameError (uninitialized constant PackagesController::Packages
+
+    @package = Packages.find(params[:id])
+               ^^^^^^^^):
+  
+app/controllers/packages_controller.rb:3:in `index'
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:13:42 +0200
+Processing by PackagesController#index as HTML
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms | Allocations: 2040)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Package without an ID):
+  
+app/controllers/packages_controller.rb:3:in `index'
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:14:40 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 4971)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5060)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 7013)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_packages_path' for #<ActionView::Base:0x0000000001a1a8>
+
+'.freeze; @output_buffer.append=( link_to 'New Package', new_packages_path ); @output_buffer.safe_append='
+                                                         ^^^^^^^^^^^^^^^^^
+Did you mean?  edit_package_path):
+    1: <h1>Package</h1>
+    2: 
+    3: <%= link_to 'New Package', new_packages_path %>
+    4: <br>
+    5: <table>
+    6:   <thead>
+  
+app/views/packages/index.html.erb:3
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:15:43 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 5391)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 5522)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms | Allocations: 15684)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create_packages_path' for #<ActionView::Base:0x0000000000bcc0>
+
+'.freeze; @output_buffer.append=( link_to 'New Package', create_packages_path ); @output_buffer.safe_append='
+                                                         ^^^^^^^^^^^^^^^^^^^^):
+    1: <h1>Package</h1>
+    2: 
+    3: <%= link_to 'New Package', create_packages_path %>
+    4: <br>
+    5: <table>
+    6:   <thead>
+  
+app/views/packages/index.html.erb:3
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:16:16 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1984)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2073)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4024)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;     @packages.each do |package| 
+                       ^^^^^):
+    14:     </tr>
+    15:   </thead>
+    16:   <tbody>
+    17:     <% @packages.each do |package| %>
+    18:       <tr>
+    19:         <td><%= package.sender %></td>
+    20:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:17
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:17:39 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:17
+  Rendered packages/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1428)
+  Rendered layout layouts/application.html.erb (Duration: 48.2ms | Allocations: 36364)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 1.2ms | Allocations: 38368)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:17:41 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 6372)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 8589)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 9138)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:17:42 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:17
+  Rendered packages/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 572)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2864)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 3170)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:17:52 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 4898)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4987)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 6934)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create_packages_path' for #<ActionView::Base:0x00000000019ff0>
+
+'.freeze; @output_buffer.append=( link_to 'New Package', create_packages_path ); @output_buffer.safe_append='
+                                                         ^^^^^^^^^^^^^^^^^^^^):
+    1: <h1>Package</h1>
+    2: 
+    3: <%= link_to 'New Package', create_packages_path %>
+    4: <br>
+    5: <table>
+    6:   <thead>
+  
+app/views/packages/index.html.erb:3
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:20:40 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 4900)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4989)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 6936)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create_packages_path' for #<ActionView::Base:0x0000000001eaf0>
+
+'.freeze; @output_buffer.append=( link_to 'New Package', create_packages_path ); @output_buffer.safe_append='
+                                                         ^^^^^^^^^^^^^^^^^^^^):
+    1: <h1>Package</h1>
+    2: 
+    3: <%= link_to 'New Package', create_packages_path %>
+    4: <br>
+    5: <table>
+    6:   <thead>
+  
+app/views/packages/index.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-10-27 14:23:04 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 4469)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 18762)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 1.0ms | Allocations: 19827)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:23:06 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 4925)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5013)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 6186)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create_packages_path' for #<ActionView::Base:0x00000000023848>
+
+'.freeze; @output_buffer.append=( link_to 'New Package', create_packages_path ); @output_buffer.safe_append='
+                                                         ^^^^^^^^^^^^^^^^^^^^):
+    1: <h1>Package</h1>
+    2: 
+    3: <%= link_to 'New Package', create_packages_path %>
+    4: <br>
+    5: <table>
+    6:   <thead>
+  
+app/views/packages/index.html.erb:3
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:23:21 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 4986)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 5075)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 7019)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_packages_path' for #<ActionView::Base:0x00000000028460>
+
+'.freeze; @output_buffer.append=( link_to 'New Package', new_packages_path ); @output_buffer.safe_append='
+                                                         ^^^^^^^^^^^^^^^^^
+Did you mean?  new_package_path
+               new_package_url
+               edit_package_path):
+    1: <h1>Package</h1>
+    2: 
+    3: <%= link_to 'New Package', new_packages_path %>
+    4: <br>
+    5: <table>
+    6:   <thead>
+  
+app/views/packages/index.html.erb:3
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages"[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231026120743)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231026043420),
+(20231020112257);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-27 12:23:59.703084', '2023-10-27 12:23:59.703088') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4adfeaf6dd7899d0c79fb1b002f43120b201be3c', '2023-10-27 12:23:59.704761', '2023-10-27 12:23:59.704763') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages"[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231026120743)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231026043420),
+(20231020112257);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-27 12:23:59.723149', '2023-10-27 12:23:59.723151') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2023-10-27 12:23:59.724324' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4adfeaf6dd7899d0c79fb1b002f43120b201be3c', '2023-10-27 12:23:59.725338', '2023-10-27 12:23:59.725339') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:24:20 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 25.6ms | Allocations: 5475)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 5606)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms | Allocations: 15768)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_packages_path' for #<ActionView::Base:0x0000000000bdb0>
+
+'.freeze; @output_buffer.append=( link_to 'New Package', new_packages_path ); @output_buffer.safe_append='
+                                                         ^^^^^^^^^^^^^^^^^
+Did you mean?  new_package_path
+               new_package_url
+               edit_package_path):
+    1: <h1>Package</h1>
+    2: 
+    3: <%= link_to 'New Package', new_packages_path %>
+    4: <br>
+    5: <table>
+    6:   <thead>
+  
+app/views/packages/index.html.erb:3
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:25:53 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1600)
+  Rendered layout layouts/application.html.erb (Duration: 45.3ms | Allocations: 36419)
+Completed 200 OK in 49ms (Views: 45.5ms | ActiveRecord: 1.0ms | Allocations: 38422)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:25:56 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 2419)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2507)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.3ms | Allocations: 15577)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass
+
+'.freeze;   if @user.errors.any? 
+                    ^^^^^^^):
+    1: <h1>New Package</h1>
+    2: <%= form_with model: @package do |f| %>
+    3:   <% if @user.errors.any? %>
+    4:     <div>
+    5:       <ul>
+    6:         <% @package.errors.full_messages.each do |message| %>
+  
+app/views/packages/new.html.erb:3
+app/views/packages/new.html.erb:2
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:26:14 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2818)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 17093)
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 1.0ms | Allocations: 22958)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:26:33 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"asdfasdf", "weight"=>"124", "destination"=>"haha"}, "commit"=>"Create Package"}
+Completed 404 Not Found in 6ms (ActiveRecord: 0.0ms | Allocations: 1227)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Package without an ID):
+  
+app/controllers/packages_controller.rb:11:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:26:33 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1413)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3596)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 3896)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:26:35 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1015)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3240)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 3557)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:26:37 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2823)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3081)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:27:51 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 4160)
+  Rendered layout layouts/application.html.erb (Duration: 45.9ms | Allocations: 38648)
+Completed 200 OK in 83ms (Views: 48.1ms | ActiveRecord: 0.3ms | Allocations: 60449)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:28:10 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"content", "weight"=>"1234", "destination"=>"haha"}, "commit"=>"Create Package"}
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms | Allocations: 2327)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Package without an ID):
+  
+app/controllers/packages_controller.rb:11:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:28:11 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1417)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3600)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3908)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:29:06 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1539)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 16038)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.9ms | Allocations: 18015)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:29:07 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1780)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3834)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 7749)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:29:17 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"content", "weight"=>"1234", "destination"=>"haha"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/create.html.erb within layouts/application
+  Rendered packages/create.html.erb within layouts/application (Duration: 0.4ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2129)
+Completed 422 Unprocessable Entity in 5ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3680)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:29:57 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1981)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 16211)
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 1.1ms | Allocations: 22026)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:29:59 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"asdfasdf", "weight"=>"124", "destination"=>"haha"}, "commit"=>"Create Package"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2933)
+
+
+  
+ActionView::MissingTemplate (Missing template packages/root_path, application/root_path with {:locale=>[:en], :formats=>[:turbo_stream, :html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/unixadmin/projects/m223/app/views"
+  * "/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views"
+  * "/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/actiontext-7.1.1/app/views"
+  * "/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/actionmailbox-7.1.1/app/views"
+
+Did you mean?  packages/create
+               packages/edit
+               pages/profile
+               packages/destroy
+               rails/conductor/action_mailbox/inbound_emails/show
+               user_sessions/create):
+  
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:30:08 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1949)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 16168)
+Completed 200 OK in 21ms (Views: 15.0ms | ActiveRecord: 1.1ms | Allocations: 22023)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:30:09 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1016)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3244)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 3637)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:30:11 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1259)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3323)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 3597)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:30:23 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"content", "weight"=>"1234", "destination"=>"haha"}, "commit"=>"Create Package"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2847)
+
+
+  
+ActionView::MissingTemplate (Missing template packages/root, application/root with {:locale=>[:en], :formats=>[:turbo_stream, :html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/unixadmin/projects/m223/app/views"
+  * "/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views"
+  * "/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/actiontext-7.1.1/app/views"
+  * "/home/unixadmin/.rbenv/versions/3.1.4/lib/ruby/gems/3.1.0/gems/actionmailbox-7.1.1/app/views"
+
+Did you mean?  packages/create
+               packages/edit
+               pages/profile
+               packages/destroy
+               user_sessions/create
+               rails/conductor/action_mailbox/inbound_emails/show):
+  
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:30:35 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1937)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 16156)
+Completed 200 OK in 18ms (Views: 12.8ms | ActiveRecord: 1.1ms | Allocations: 21998)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:30:37 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"asdfasdf", "weight"=>"124", "destination"=>"haha"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 6197)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 6281)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 7672)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Package id: nil, sender: "admin", recipient: "asdfasdf", content: nil, weight: "124", destination: "haha", created_at: nil, updated_at: nil>):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @package.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:32:03 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1941)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 16160)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 1.0ms | Allocations: 22005)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:32:04 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"asdfasdf", "weight"=>"124", "destination"=>"haha"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 6101)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 6185)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 7574)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Package id: nil, sender: "admin", recipient: "asdfasdf", content: nil, weight: "124", destination: "haha", created_at: nil, updated_at: nil>):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @package.each do |packages| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:32:06 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 727)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2982)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 3300)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:32:06 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2838)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3096)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:32:08 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2841)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 3101)
+
+
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:33:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2661)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2792)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 12954)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;     @packages.each do |package| 
+                       ^^^^^):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @packages.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:33:42 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1530)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 36418)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.9ms | Allocations: 38421)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:33:45 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2825)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 5020)
+Completed 200 OK in 34ms (Views: 6.0ms | ActiveRecord: 0.5ms | Allocations: 18115)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:34:01 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"content", "weight"=>"1234", "destination"=>"haha"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 5890)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 5975)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 7645)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Package id: nil, sender: "admin", recipient: "content", content: nil, weight: "1234", destination: "haha", created_at: nil, updated_at: nil>):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @package.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:34:25 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1937)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 16156)
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 1.0ms | Allocations: 22009)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:34:26 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"asdfasdf", "weight"=>"124", "destination"=>"haha"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 6101)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 6185)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 7587)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Package id: nil, sender: "admin", recipient: "asdfasdf", content: nil, weight: "124", destination: "haha", created_at: nil, updated_at: nil>):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @package.each do |packages| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:34:32 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1956)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 16176)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 1.0ms | Allocations: 22022)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:34:33 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"asdfasdf", "weight"=>"124", "destination"=>"haha"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 6101)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 6185)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 7568)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Package id: nil, sender: "admin", recipient: "asdfasdf", content: nil, weight: "124", destination: "haha", created_at: nil, updated_at: nil>):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @package.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:35:28 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1939)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 16158)
+Completed 200 OK in 19ms (Views: 13.6ms | ActiveRecord: 1.3ms | Allocations: 22016)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:35:30 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"asdfasdf", "weight"=>"124", "destination"=>"haha"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1979)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 2063)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 3465)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;     @packages.each do |package| 
+                       ^^^^^):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @packages.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:35:34 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 728)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2995)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 3313)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:35:34 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2841)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3099)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:35:38 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2817)
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 3075)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:35:38 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 591)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2846)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 3104)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:35:38 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2814)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 3072)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:35:41 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1446)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 15964)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.8ms | Allocations: 17939)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:36:26 +0200
+Processing by PackagesController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2646)
+
+
+  
+NameError (uninitialized constant PackagesController::Packages
+
+    @packages = Packages.all
+                ^^^^^^^^):
+  
+app/controllers/packages_controller.rb:3:in `index'
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:37:02 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1446)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 15958)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.8ms | Allocations: 17936)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:37:03 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1771)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3825)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 7711)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 14:37:17 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"content", "weight"=>"1234", "destination"=>"hah"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1701)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1785)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3079)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;     @packages.each do |package| 
+                       ^^^^^):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @packages.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 14:59:26 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1933)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 16187)
+Completed 200 OK in 23ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 21263)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 14:59:28 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1251)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3484)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.8ms | Allocations: 3877)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 15:04:13 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1247)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3301)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 3574)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 15:04:32 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"content", "weight"=>"1234", "destination"=>"haha"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1701)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1785)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3093)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;     @packages.each do |package| 
+                       ^^^^^):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @packages.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/" for 127.0.0.1 at 2023-10-27 15:08:29 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 5995)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 20292)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 1.1ms | Allocations: 21357)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPackage Create (0.7ms)[0m  [1m[32mINSERT INTO "packages" ("sender", "recipient", "content", "weight", "destination", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["sender", "sender1"], ["recipient", "recipient1"], ["content", "content1"], ["weight", "weight1"], ["destination", "destination1"], ["created_at", "2023-10-27 13:08:50.948827"], ["updated_at", "2023-10-27 13:08:50.948827"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-10-27 15:09:02 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 12978)
+  Rendered layout layouts/application.html.erb (Duration: 54.9ms | Allocations: 47933)
+Completed 200 OK in 63ms (Views: 57.9ms | ActiveRecord: 0.3ms | Allocations: 52208)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:09:04 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 29.5ms | Allocations: 13229)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 15720)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.3ms | Allocations: 16953)
+
+
+Started GET "/packages.1" for 127.0.0.1 at 2023-10-27 15:09:09 +0200
+Processing by PackagesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 801)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3033)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 3426)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 15:12:56 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2873)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 17057)
+Completed 200 OK in 31ms (Views: 25.4ms | ActiveRecord: 1.0ms | Allocations: 22875)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 15:13:18 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"admin", "weight"=>"admin", "destination"=>"admin"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2423)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2519)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4265)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;     @packages.each do |package| 
+                       ^^^^^):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @packages.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:13:21 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 946)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3385)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 3738)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:13:21 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 725)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2977)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 3235)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:16:22 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.4ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 28.8ms | Allocations: 14221)
+  Rendered layout layouts/application.html.erb (Duration: 66.6ms | Allocations: 50492)
+Completed 200 OK in 83ms (Views: 68.7ms | ActiveRecord: 0.7ms | Allocations: 60722)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 15:16:24 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2818)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 5013)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 5476)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 15:16:33 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"admin", "weight"=>"admin", "destination"=>"admin"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 2119)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2215)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3911)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;     @packages.each do |package| 
+                       ^^^^^):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @packages.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:16:43 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 799)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3252)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 3558)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:16:43 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 681)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2936)
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 3194)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:17:47 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.0ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 5139)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 19628)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 1.0ms | Allocations: 21605)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 15:17:49 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1763)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3817)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 4171)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 15:17:58 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"admin", "weight"=>"admin", "destination"=>"admin"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1701)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1785)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 3084)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;     @packages.each do |package| 
+                       ^^^^^):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @packages.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 15:20:28 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1242)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3311)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 3584)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 15:20:38 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"admin", "weight"=>"admin", "destination"=>"admin"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  Rendered packages/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1672)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1756)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2809)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;     @packages.each do |package| 
+                       ^^^^^):
+    15:     </tr>
+    16:   </thead>
+    17:   <tbody>
+    18:     <% @packages.each do |package| %>
+    19:       <tr>
+    20:         <td><%= package.sender %></td>
+    21:         <td><%= package.recipient %></td>
+  
+app/views/packages/index.html.erb:18
+app/controllers/packages_controller.rb:18:in `create'
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 15:21:16 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1937)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 16157)
+Completed 200 OK in 23ms (Views: 17.5ms | ActiveRecord: 1.0ms | Allocations: 22008)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 15:21:18 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"admin", "weight"=>"admin", "destination"=>"admin"}, "commit"=>"Create Package"}
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1677)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3720)
+Completed 422 Unprocessable Entity in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 5335)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 15:21:45 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1970)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 16087)
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 1.0ms | Allocations: 21896)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 15:21:46 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"admin", "content"=>"admin", "weight"=>"admin", "destination"=>"admin"}, "commit"=>"Create Package"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/packages_controller.rb:13:in `create'
+  [1m[36mPackage Create (0.9ms)[0m  [1m[32mINSERT INTO "packages" ("sender", "recipient", "content", "weight", "destination", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["sender", "admin"], ["recipient", "admin"], ["content", "admin"], ["weight", "admin"], ["destination", "admin"], ["created_at", "2023-10-27 13:21:46.628018"], ["updated_at", "2023-10-27 13:21:46.628018"]]
+  ↳ app/controllers/packages_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/packages_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/packages
+Completed 302 Found in 8ms (ActiveRecord: 4.3ms | Allocations: 3735)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:21:46 +0200
+Processing by PackagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3458)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 3885)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:29:19 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 4625)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 19123)
+Completed 200 OK in 18ms (Views: 14.8ms | ActiveRecord: 0.8ms | Allocations: 21137)
+
+
+Started GET "/packages/2/edit" for 127.0.0.1 at 2023-10-27 15:29:22 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1674)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3842)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 6615)
+
+
+Started GET "/packages/2/edit" for 127.0.0.1 at 2023-10-27 15:29:27 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1028)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3078)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 3853)
+
+
+Started PATCH "/packages/2" for 127.0.0.1 at 2023-10-27 15:29:36 +0200
+  
+ActionController::RoutingError (No route matches [PATCH] "/packages/2"):
+  
+Started GET "/packages/2/edit" for 127.0.0.1 at 2023-10-27 15:29:36 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1148)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3323)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 4182)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:29:37 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 800)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3049)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 3309)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:45:09 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.5ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1089)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3314)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.8ms | Allocations: 3572)
+
+
+Started GET "/packages/2/edit" for 127.0.0.1 at 2023-10-27 15:45:11 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1028)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3078)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 3868)
+
+
+Started PATCH "/packages/2" for 127.0.0.1 at 2023-10-27 15:45:14 +0200
+  
+ActionController::RoutingError (No route matches [PATCH] "/packages/2"):
+  
+Started GET "/packages/2/edit" for 127.0.0.1 at 2023-10-27 15:45:14 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1037)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3102)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3853)
+
+
+Started GET "/packages/2" for 127.0.0.1 at 2023-10-27 15:53:56 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/packages/2"):
+  
+Started GET "/package/2" for 127.0.0.1 at 2023-10-27 15:54:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/package/2"):
+  
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:54:07 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 29.4ms | Allocations: 14212)
+  Rendered layout layouts/application.html.erb (Duration: 74.9ms | Allocations: 49297)
+Completed 200 OK in 91ms (Views: 75.8ms | ActiveRecord: 0.5ms | Allocations: 57195)
+
+
+Started GET "/users/" for 127.0.0.1 at 2023-10-27 15:54:15 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_admin rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms | Allocations: 5128)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 15:54:15 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1291)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3493)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.1ms | Allocations: 4032)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2023-10-27 15:54:18 +0200
+Processing by UserSessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1807)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4009)
+Completed 200 OK in 25ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 14603)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2023-10-27 15:54:26 +0200
+Processing by UserSessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.admin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.admin"], ["LIMIT", 1]]
+  ↳ app/controllers/user_sessions_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/user_sessions/new
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1371)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2023-10-27 15:54:26 +0200
+Processing by UserSessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 741)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2903)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 3266)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2023-10-27 15:54:34 +0200
+Processing by UserSessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.admin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.admin"], ["LIMIT", 1]]
+  ↳ app/controllers/user_sessions_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/user_sessions/new
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 879)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2023-10-27 15:54:34 +0200
+Processing by UserSessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 684)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 2739)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 3009)
+
+
+Started POST "/user_sessions" for 127.0.0.1 at 2023-10-27 15:54:43 +0200
+Processing by UserSessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.admin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.admin"], ["LIMIT", 1]]
+  ↳ app/controllers/user_sessions_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/user_sessions/new
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 901)
+
+
+Started GET "/user_sessions/new" for 127.0.0.1 at 2023-10-27 15:54:43 +0200
+Processing by UserSessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering user_sessions/new.html.erb within layouts/application
+  Rendered user_sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 672)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2742)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3016)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 15:54:45 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 811)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2866)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3114)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2023-10-27 15:54:50 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_admin rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 881)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 15:54:50 +0200
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 851)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2907)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms | Allocations: 3155)
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages"[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231026120743)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231026043420),
+(20231020112257);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-27 13:55:29.508983', '2023-10-27 13:55:29.508986') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4adfeaf6dd7899d0c79fb1b002f43120b201be3c', '2023-10-27 13:55:29.510706', '2023-10-27 13:55:29.510708') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "packages"[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "packages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "sender" varchar, "recipient" varchar, "content" varchar, "weight" varchar, "destination" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password_digest" varchar, "password_confirmation" varchar, "email" varchar, "address" varchar, "telnr" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_role" ON "users" ("role")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231026120743)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231026043420),
+(20231020112257);[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-27 13:55:29.530604', '2023-10-27 13:55:29.530607') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2023-10-27 13:55:29.532144' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4adfeaf6dd7899d0c79fb1b002f43120b201be3c', '2023-10-27 13:55:29.533154', '2023-10-27 13:55:29.533156') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "password_confirmation", "email", "address", "telnr", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["username", "admin"], ["password_digest", "[FILTERED]"], ["password_confirmation", "[FILTERED]"], ["email", "admin@admin.admin"], ["address", "adminstreet"], ["telnr", "12344321"], ["created_at", "2023-10-27 13:55:29.752527"], ["updated_at", "2023-10-27 13:55:29.752527"], ["role", 1]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPackage Create (0.7ms)[0m  [1m[32mINSERT INTO "packages" ("sender", "recipient", "content", "weight", "destination", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["sender", "sender1"], ["recipient", "recipient1"], ["content", "content1"], ["weight", "weight1"], ["destination", "destination1"], ["created_at", "2023-10-27 13:55:29.773094"], ["updated_at", "2023-10-27 13:55:29.773094"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPackage Create (0.7ms)[0m  [1m[32mINSERT INTO "packages" ("sender", "recipient", "content", "weight", "destination", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["sender", "sender1"], ["recipient", "recipient1"], ["content", "content1"], ["weight", "weight1"], ["destination", "destination1"], ["created_at", "2023-10-27 13:55:40.268253"], ["updated_at", "2023-10-27 13:55:40.268253"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-10-27 15:55:47 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendered pages/index.html.erb within layouts/application (Duration: 48.0ms | Allocations: 26827)
+  Rendered layout layouts/application.html.erb (Duration: 85.5ms | Allocations: 61727)
+Completed 200 OK in 93ms (Views: 88.0ms | ActiveRecord: 0.5ms | Allocations: 66004)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2023-10-27 15:55:52 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:16
+  Rendered users/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1123)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3318)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 4842)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:55:57 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 9359)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 11804)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.3ms | Allocations: 13031)
+
+
+Started DELETE "/packages/2" for 127.0.0.1 at 2023-10-27 15:56:02 +0200
+Processing by PackagesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/packages_controller.rb:43:in `destroy'
+  [1m[36mPackage Destroy (0.6ms)[0m  [1m[31mDELETE FROM "packages" WHERE "packages"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/packages_controller.rb:43:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/packages_controller.rb:43:in `destroy'
+Redirected to http://127.0.0.1:3000/packages
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms | Allocations: 3736)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:56:02 +0200
+Processing by PackagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 715)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3079)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3434)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 15:56:08 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2787)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4981)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 5384)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 15:56:15 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"admin", "content"=>"admin", "weight"=>"admin", "destination"=>"admin"}, "commit"=>"Create Package"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/packages_controller.rb:13:in `create'
+  [1m[36mPackage Create (0.8ms)[0m  [1m[32mINSERT INTO "packages" ("sender", "recipient", "content", "weight", "destination", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["sender", "admin"], ["recipient", "admin"], ["content", "admin"], ["weight", "admin"], ["destination", "admin"], ["created_at", "2023-10-27 13:56:15.109749"], ["updated_at", "2023-10-27 13:56:15.109749"]]
+  ↳ app/controllers/packages_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/packages_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/packages
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 3600)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:56:15 +0200
+Processing by PackagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 803)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3072)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 3365)
+
+
+Started GET "/packages/3/edit" for 127.0.0.1 at 2023-10-27 15:56:20 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1451)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3501)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 4348)
+
+
+Started PATCH "/packages/3" for 127.0.0.1 at 2023-10-27 15:56:23 +0200
+  
+ActionController::RoutingError (No route matches [PATCH] "/packages/3"):
+  
+Started GET "/packages/3/edit" for 127.0.0.1 at 2023-10-27 15:56:23 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1215)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3390)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.1ms | Allocations: 4250)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 15:56:24 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 800)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3046)
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 3306)
+
+
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started DELETE "/packages/3" for 127.0.0.1 at 2023-10-27 16:00:10 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackagesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/packages_controller.rb:43:in `destroy'
+  [1m[36mPackage Destroy (0.8ms)[0m  [1m[31mDELETE FROM "packages" WHERE "packages"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/packages_controller.rb:43:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/packages_controller.rb:43:in `destroy'
+Redirected to http://127.0.0.1:3000/packages
+Completed 302 Found in 42ms (ActiveRecord: 1.4ms | Allocations: 25733)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 16:00:11 +0200
+Processing by PackagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1365)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 36613)
+Completed 200 OK in 50ms (Views: 46.6ms | ActiveRecord: 0.1ms | Allocations: 40079)
+
+
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 16:01:13 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 22.2ms | Allocations: 14221)
+  Rendered layout layouts/application.html.erb (Duration: 68.5ms | Allocations: 50724)
+Completed 200 OK in 83ms (Views: 70.3ms | ActiveRecord: 0.3ms | Allocations: 60952)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 16:01:15 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2799)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4994)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 5457)
+
+
+Started POST "/packages" for 127.0.0.1 at 2023-10-27 16:01:20 +0200
+Processing by PackagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"admin", "content"=>"admin", "weight"=>"admin", "destination"=>"admin"}, "commit"=>"Create Package"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/packages_controller.rb:13:in `create'
+  [1m[36mPackage Create (0.7ms)[0m  [1m[32mINSERT INTO "packages" ("sender", "recipient", "content", "weight", "destination", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["sender", "admin"], ["recipient", "admin"], ["content", "admin"], ["weight", "admin"], ["destination", "admin"], ["created_at", "2023-10-27 14:01:20.833241"], ["updated_at", "2023-10-27 14:01:20.833241"]]
+  ↳ app/controllers/packages_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/packages_controller.rb:13:in `create'
+Redirected to http://127.0.0.1:3000/packages
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms | Allocations: 4010)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 16:01:20 +0200
+Processing by PackagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3189)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 3544)
+
+
+Started GET "/packages/4/edit" for 127.0.0.1 at 2023-10-27 16:01:22 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1616)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3783)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 6579)
+
+
+Started PATCH "/packages/4" for 127.0.0.1 at 2023-10-27 16:01:24 +0200
+  
+ActionController::RoutingError (No route matches [PATCH] "/packages/4"):
+  
+Started GET "/packages/4/edit" for 127.0.0.1 at 2023-10-27 16:01:24 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1215)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3389)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 4265)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 16:01:25 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 800)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3037)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 3297)
+
+
+Started GET "/packages/1/edit" for 127.0.0.1 at 2023-10-27 16:05:34 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1713)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 15923)
+Completed 200 OK in 51ms (Views: 12.2ms | ActiveRecord: 3.7ms | Allocations: 23060)
+
+
+Started GET "/packages/4/edit" for 127.0.0.1 at 2023-10-27 16:05:37 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1037)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3087)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms | Allocations: 3923)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 16:10:01 +0200
+Processing by PackagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 5210)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 19603)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 1.3ms | Allocations: 21581)
+
+
+Started GET "/packages/4/edit" for 127.0.0.1 at 2023-10-27 16:10:02 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1509)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3561)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 5090)
+
+
+Started PATCH "/packages/4" for 127.0.0.1 at 2023-10-27 16:10:04 +0200
+Processing by PackagesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"admin", "content"=>"admin", "weight"=>"adminadsf"}, "commit"=>"Update Package", "id"=>"4"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:28:in `update'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms | Allocations: 4640)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<PackagesController:0x00000000015c48>
+
+      if @package.update(user_params)
+                         ^^^^^^^^^^^
+Did you mean?  user_path):
+  
+app/controllers/packages_controller.rb:31:in `block in update'
+app/controllers/packages_controller.rb:30:in `update'
+Started GET "/packages/4/edit" for 127.0.0.1 at 2023-10-27 16:10:28 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1720)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 15930)
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 1.2ms | Allocations: 23045)
+
+
+Started PATCH "/packages/4" for 127.0.0.1 at 2023-10-27 16:10:30 +0200
+Processing by PackagesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "package"=>{"sender"=>"admin", "recipient"=>"admin", "content"=>"admin", "weight"=>"adminasdf"}, "commit"=>"Update Package", "id"=>"4"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/packages_controller.rb:31:in `block in update'
+  [1m[36mPackage Update (0.6ms)[0m  [1m[33mUPDATE "packages" SET "weight" = ?, "updated_at" = ? WHERE "packages"."id" = ?[0m  [["weight", "adminasdf"], ["updated_at", "2023-10-27 14:10:30.594319"], ["id", 4]]
+  ↳ app/controllers/packages_controller.rb:31:in `block in update'
+Redirected to http://127.0.0.1:3000/packages
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/packages_controller.rb:30:in `update'
+Completed 302 Found in 9ms (ActiveRecord: 4.4ms | Allocations: 3428)
+
+
+Started GET "/packages" for 127.0.0.1 at 2023-10-27 16:10:30 +0200
+Processing by PackagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering packages/index.html.erb within layouts/application
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages"[0m
+  ↳ app/views/packages/index.html.erb:18
+  Rendered packages/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1136)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3405)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.1ms | Allocations: 3785)
+
+
+Started GET "/packages/4/edit" for 127.0.0.1 at 2023-10-27 16:10:46 +0200
+Processing by PackagesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPackage Load (0.1ms)[0m  [1m[34mSELECT "packages".* FROM "packages" WHERE "packages"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/packages_controller.rb:24:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering packages/edit.html.erb within layouts/application
+  Rendered packages/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1031)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3081)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3835)
+
+
+Started GET "/packages/new" for 127.0.0.1 at 2023-10-27 16:10:48 +0200
+Processing by PackagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering packages/new.html.erb within layouts/application
+  Rendered packages/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1642)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3696)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 4031)
+
+

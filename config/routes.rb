@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'package/index'
-  get 'package/create'
-  get 'package/edit'
-  get 'package/destroy'
   get 'pages/profile'
   get 'user_sessions/new'
   get 'user_sessions/create'
@@ -24,5 +20,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create, :edit, :update]
   resources :user_sessions, only: [:new, :create, :destroy]
   resources :admin, only: [:edit, :update, :destroy]
+  resources :packages, only: [:index, :create, :destroy, :edit, :new, :update]
 
 end
